@@ -1,0 +1,4 @@
+# Volatile regime
+drift: 0.0
+vol: 0.08
+p_informed: 0.4
