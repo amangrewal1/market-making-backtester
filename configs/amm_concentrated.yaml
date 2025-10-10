@@ -1,0 +1,5 @@
+# AMM v3-style concentrated
+tick_spacing: 60
+range_half_width_ticks: 300
+initial_liquidity: 1e6
+fee_bps: 30
