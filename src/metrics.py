@@ -61,3 +61,14 @@ def compute_sharpe(equity: np.ndarray) -> float:
     if rets.std() == 0:
         return 0.0
     return float(rets.mean() / rets.std() * np.sqrt(len(rets)))
+
+
+def rolling_sharpe(pnls, window=252):
+    import numpy as np
+    pnls = np.asarray(pnls, dtype=float)
+    if len(pnls) < window:
+        return float('nan')
+    rets = np.diff(pnls)
+    if rets.std() == 0:
+        return 0.0
+    return float(rets.mean() / rets.std() * (window ** 0.5))
