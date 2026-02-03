@@ -1,5 +1,7 @@
 # Market Making Strategy Backtester
 
+![tests](https://github.com/amangrewal1/market-making-backtester/actions/workflows/test.yml/badge.svg) ![license](https://img.shields.io/badge/license-MIT-blue)
+
 Backtesting framework for liquidity-provision strategies on AMMs and CLOBs under
 regime-switching market conditions. Includes a Bayesian regime-inference market
 maker that updates quoting decisions from observed order flow, and a fixed-threshold
