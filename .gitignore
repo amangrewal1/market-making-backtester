@@ -14,7 +14,6 @@ venv/
 .vscode/
 .idea/
 
-# Backtest outputs (regenerate via `python run_backtest.py`)
+# Backtest outputs (large arrays, regenerate via `python run_backtest.py`)
 results/*.npz
-results/*.png
-results/*.json
+# Note: PNGs and summary JSONs are kept so README renders; they're small

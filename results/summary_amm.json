@@ -1,0 +1,36 @@
+{
+  "venue": "amm",
+  "episodes": 1000,
+  "horizon": 300,
+  "elapsed_sec": 8.883341789245605,
+  "fixed": {
+    "episodes": 1000,
+    "mean_pnl": 0.14561800627992585,
+    "median_pnl": -0.27333218375206236,
+    "std_pnl": 34.674823117319654,
+    "pct_positive": 0.499,
+    "mean_sharpe": 0.15711230352247532,
+    "mean_max_drawdown": -114.73632792087234,
+    "mean_trades": 420.691
+  },
+  "bayesian": {
+    "episodes": 1000,
+    "mean_pnl": -5.787781755324353,
+    "median_pnl": -2.5643031608886693,
+    "std_pnl": 42.70716450363677,
+    "pct_positive": 0.452,
+    "mean_sharpe": 0.1163559919271052,
+    "mean_max_drawdown": -118.62778520390904,
+    "mean_trades": 420.691
+  },
+  "head_to_head_bayes_vs_fixed": {
+    "episodes": 1000,
+    "mean_diff": -5.933399761604279,
+    "median_diff": 0.8680105635375028,
+    "win_rate": 0.554,
+    "loss_rate": 0.446,
+    "tie_rate": 0.0,
+    "avg_win": 10.581205569116165,
+    "avg_loss": -26.447057504248054
+  }
+}
