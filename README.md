@@ -58,6 +58,41 @@ src/
   elevated.
 - **Baseline**: fixed bid-ask spread + inventory band, no regime awareness.
 
+## Results
+
+### CLOB venue (2,000 paired episodes, 500-step horizon)
+
+|                    |     Fixed |  Bayesian | Δ (Bayes − Fixed) |
+|--------------------|----------:|----------:|------------------:|
+| Mean PnL           |    −4.17  |  **+20.76** |      **+24.93**   |
+| Median PnL         |     +2.89 |  **+25.00** |      +22.57       |
+| Mean Sharpe        |     0.10  |  **0.64**   |                   |
+| Positive-PnL rate  |    51.8%  |  **70.0%**  |                   |
+| Mean max drawdown  |   −66.7   | **−48.4**   |    −27%           |
+| **Win rate (paired)** |       |         |   **94.5%**       |
+
+The Bayesian regime-inference market maker beats the fixed-threshold baseline on
+**94.5%** of paired episodes, with Sharpe ~6× higher and drawdown ~27% smaller.
+
+![CLOB PnL distribution](results/pnl_clob.png)
+
+### AMM venue (1,000 paired episodes, 300-step horizon)
+
+|                    |     Fixed |  Bayesian |
+|--------------------|----------:|----------:|
+| Mean PnL           |   +0.15   |   −5.79   |
+| Median PnL         |   −0.27   |   −2.56   |
+| Mean Sharpe        |   0.16    |   0.12    |
+| Positive-PnL rate  |   49.9%   |   45.2%   |
+| Win rate (paired)  |           |   55.4%   |
+
+Honest finding: on AMMs the regime-inference strategy barely beats a fixed
+baseline (55.4% paired wins). The Bayesian posterior helps at a CLOB where spread
+control directly captures value, but on a concentrated-liquidity AMM the range
+mechanics absorb most of the information advantage.
+
+![AMM PnL distribution](results/pnl_amm.png)
+
 ## Output
 
 The win-rate metric is the fraction of episodes in which the Bayesian policy's PnL
